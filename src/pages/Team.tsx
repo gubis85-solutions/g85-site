@@ -30,7 +30,7 @@ const executiveLeaders = [
 
 const departmentHeads = [
   {
-    role: 'Chief Financial Officer (CFO)',
+    role: 'Chief Financial Officer',
     name: 'Mr William Moshupye',
     note: 'Financial stewardship, budgeting, governance, and reporting.',
     image: cfoImg,
