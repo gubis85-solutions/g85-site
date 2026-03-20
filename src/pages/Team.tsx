@@ -2,6 +2,7 @@ import "../styles/Team.css";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { getStrapiMediaUrl } from "../lib/strapi";
+import fallbackTeamPhoto from "../assets/gubis85.png";
 
 import cpoActionImg from "../assets/Team-Page/CPO-officers-In-action.jpg";
 import briefingRoomImg from "../assets/Team-Page/teams-office-02-briefing-room.jpg";
@@ -110,6 +111,7 @@ export default function Team() {
   const [panes, setPanes] = useState<TeamPane[]>([]);
   const [members, setMembers] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
+  const [brokenPhotos, setBrokenPhotos] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchTeamData = async () => {
@@ -205,6 +207,11 @@ export default function Team() {
     [members]
   );
 
+  const resolveMemberPhoto = (member: TeamMember) =>
+    member.photoUrl && !brokenPhotos.includes(member.id)
+      ? member.photoUrl
+      : fallbackTeamPhoto;
+
   return (
     <div className="team-page">
       <section className="page-hero">
@@ -283,15 +290,18 @@ export default function Team() {
               return (
                 <article key={leader.id} className="team-card">
                   <div className="team-card__photo" aria-hidden="true">
-                    {leader.photoUrl ? (
-                      <img
-                        src={leader.photoUrl}
-                        alt={leader.name}
-                        className="team-card__photo-img"
-                      />
-                    ) : (
-                      <span>Photo</span>
-                    )}
+                    <img
+                      src={resolveMemberPhoto(leader)}
+                      alt={leader.name}
+                      className="team-card__photo-img"
+                      onError={() =>
+                        setBrokenPhotos((current) =>
+                          current.includes(leader.id)
+                            ? current
+                            : [...current, leader.id],
+                        )
+                      }
+                    />
                   </div>
 
                   <div className="team-card__body">
@@ -332,15 +342,18 @@ export default function Team() {
               return (
                 <article key={leader.id} className="team-card">
                   <div className="team-card__photo" aria-hidden="true">
-                    {leader.photoUrl ? (
-                      <img
-                        src={leader.photoUrl}
-                        alt={leader.name}
-                        className="team-card__photo-img"
-                      />
-                    ) : (
-                      <span>Photo</span>
-                    )}
+                    <img
+                      src={resolveMemberPhoto(leader)}
+                      alt={leader.name}
+                      className="team-card__photo-img"
+                      onError={() =>
+                        setBrokenPhotos((current) =>
+                          current.includes(leader.id)
+                            ? current
+                            : [...current, leader.id],
+                        )
+                      }
+                    />
                   </div>
 
                   <div className="team-card__body">
