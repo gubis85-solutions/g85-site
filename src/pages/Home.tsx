@@ -29,6 +29,8 @@ export default function Home() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   // * Hero background images (first is the primary/pivot image).
   const backgroundImages = [
@@ -127,69 +129,71 @@ export default function Home() {
   };
 
   // ? Simple form submission handler (placeholder for backend integration).
-  const API_URL =
-  import.meta.env.VITE_API_URL ||
-  "https://g85-cms-backend-production.up.railway.app";
+  const API_URL = (
+    import.meta.env.VITE_STRAPI_URL ||
+    import.meta.env.VITE_API_URL ||
+    "https://g85-cms-backend-production.up.railway.app"
+  ).replace(/\/+$/, "");
 
-const handleFormSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (isSubmitting) return;
-  setIsSubmitting(true);
+    if (isSubmitting) return;
 
-  try {
-    const response = await fetch(`${API_URL}/api/contact-enquiries/submit`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        phone: formData.phone,
-        businessName: formData.businessName,
-        province: formData.province,
-        serviceInterest: formData.serviceInterest,
-        productInterest: formData.productInterest,
-        message: formData.message,
-      }),
-    });
+    setIsSubmitting(true);
+    setSubmitSuccess("");
+    setSubmitError("");
 
-    const contentType = response.headers.get("content-type") || "";
-    const result = contentType.includes("application/json")
-      ? await response.json()
-      : await response.text();
+    try {
+      const response = await fetch(`${API_URL}/api/contact-enquiries/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: {
+            ...formData,
+          },
+        }),
+      });
 
-    if (!response.ok) {
-      const errorMessage =
-        typeof result === "string"
-          ? result
-          : result?.error?.message || result?.message || `Request failed (${response.status})`;
+      const contentType = response.headers.get("content-type") || "";
+      const result = contentType.includes("application/json")
+        ? await response.json()
+        : await response.text();
 
-      throw new Error(errorMessage);
+      if (!response.ok) {
+        const errorMessage =
+          typeof result === "string"
+            ? result
+            : result?.error?.message || result?.message || "Submission failed";
+
+        throw new Error(errorMessage);
+      }
+
+      setSubmitSuccess("Enquiry sent successfully. We will get back to you shortly.");
+      setSubmitError("");
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        businessName: "",
+        province: "",
+        serviceInterest: "",
+        productInterest: "",
+        message: "",
+      });
+    } catch (error: any) {
+      const message =
+        error.message || "Something went wrong. Please try again.";
+      setSubmitError(message);
+      setSubmitSuccess("");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    alert("Your enquiry was sent successfully.");
-
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      businessName: "",
-      province: "",
-      serviceInterest: "",
-      productInterest: "",
-      message: "",
-    });
-  } catch (error: any) {
-    console.error("Form submission error:", error);
-    alert(error.message || "Something went wrong while sending your enquiry.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div className="home">
@@ -450,6 +454,14 @@ const handleFormSubmit = async (e: React.FormEvent) => {
           <h2>
             <span className="about-heading__accent">Get In Touch</span> With Us
           </h2>
+
+          {submitSuccess ? (
+            <p className="form-feedback form-feedback--success">{submitSuccess}</p>
+          ) : null}
+
+          {submitError ? (
+            <p className="form-feedback form-feedback--error">{submitError}</p>
+          ) : null}
 
           <form className="contact-form" onSubmit={handleFormSubmit}>
             {/* * Name fields */}

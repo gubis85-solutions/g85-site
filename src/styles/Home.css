@@ -834,6 +834,26 @@
   box-shadow: 0 15px 50px rgba(43, 61, 121, 0.1);
 }
 
+.form-feedback {
+  margin: 0 0 1rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-feedback--success {
+  color: #135e37;
+  background: rgba(28, 130, 77, 0.12);
+  border: 1px solid rgba(28, 130, 77, 0.28);
+}
+
+.form-feedback--error {
+  color: #8f2d12;
+  background: rgba(210, 84, 38, 0.12);
+  border: 1px solid rgba(210, 84, 38, 0.28);
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
