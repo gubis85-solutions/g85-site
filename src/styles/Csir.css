@@ -1,4 +1,4 @@
-/* CSIR Page */
+/* * CSIR page */
 .csir-page {
   width: 100%;
 }
@@ -7,7 +7,7 @@
   background: linear-gradient(135deg, #ffffff 0%, #f4f6fb 100%);
   padding: 40px;
   border-radius: 12px;
-  border-left: 5px solid #2B3D79;
+  border-left: 5px solid #2b3d79;
   box-shadow: 0 10px 20px rgba(43, 61, 121, 0.08);
   max-width: 900px;
   margin: 0 auto;
@@ -17,7 +17,7 @@
 }
 
 .csir-content h2 {
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 2rem;
   margin-bottom: 16px;
   font-weight: 700;
@@ -45,7 +45,7 @@
 
 .csir-initiatives h3 {
   margin: 0 0 12px;
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 1.1rem;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .csir-initiatives li strong {
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 1rem;
 }
 
@@ -78,10 +78,36 @@
 
 .csir-initiatives li span {
   font-size: 0.85rem;
-  color: #F48020;
+  color: #f48020;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.csir-initiatives__error,
+.csir-calendar__error {
+  margin: 0;
+  color: #ffd6d6;
+  font-weight: 600;
+}
+
+.csir-initiative__image-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.csir-initiative__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.csir-initiative__date {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .csir-calendar {
@@ -89,9 +115,13 @@
   gap: 28px;
   padding: 32px;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(26, 38, 82, 0.95), rgba(15, 26, 58, 0.98));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 38, 82, 0.95),
+    rgba(15, 26, 58, 0.98)
+  );
   border: 1px solid rgba(244, 128, 32, 0.25);
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -108,7 +138,7 @@
 }
 
 .csir-calendar h3 {
-  color: #F48020;
+  color: #f48020;
   margin: 0 0 10px;
   font-size: 1.4rem;
   font-weight: 800;
@@ -135,7 +165,11 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: linear-gradient(135deg, rgba(26, 38, 82, 0.9), rgba(15, 26, 58, 0.85));
+  background: linear-gradient(
+    135deg,
+    rgba(26, 38, 82, 0.9),
+    rgba(15, 26, 58, 0.85)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   padding: 8px 16px;
@@ -145,7 +179,7 @@
 .csir-calendar__nav-btn {
   background: transparent;
   border: 1px solid rgba(244, 128, 32, 0.4);
-  color: #F48020;
+  color: #f48020;
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 0.8rem;
@@ -158,7 +192,7 @@
 
 .csir-calendar__nav-btn:hover {
   background: rgba(244, 128, 32, 0.2);
-  border-color: #F48020;
+  border-color: #f48020;
   transform: scale(1.05);
 }
 
@@ -174,7 +208,11 @@
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 10px;
-  background: linear-gradient(135deg, rgba(15, 26, 58, 0.6), rgba(26, 38, 82, 0.5));
+  background: linear-gradient(
+    135deg,
+    rgba(15, 26, 58, 0.6),
+    rgba(26, 38, 82, 0.5)
+  );
   padding: 20px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -201,7 +239,11 @@
   min-height: 50px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.04)
+  );
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -214,30 +256,46 @@
 .csir-calendar__day:hover {
   transform: translateY(-4px) scale(1.05);
   border-color: rgba(244, 128, 32, 0.6);
-  background: linear-gradient(135deg, rgba(244, 128, 32, 0.15), rgba(244, 128, 32, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(244, 128, 32, 0.15),
+    rgba(244, 128, 32, 0.08)
+  );
   box-shadow: 0 8px 20px rgba(244, 128, 32, 0.3);
 }
 
 .csir-calendar__day.has-event {
-  background: linear-gradient(135deg, rgba(244, 128, 32, 0.3), rgba(244, 128, 32, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(244, 128, 32, 0.3),
+    rgba(244, 128, 32, 0.2)
+  );
   border: 2px solid rgba(244, 128, 32, 0.6);
-  box-shadow: 
+  box-shadow:
     0 4px 16px rgba(244, 128, 32, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .csir-calendar__day.has-event:hover {
-  background: linear-gradient(135deg, rgba(244, 128, 32, 0.4), rgba(244, 128, 32, 0.3));
-  border-color: #F48020;
-  box-shadow: 
+  background: linear-gradient(
+    135deg,
+    rgba(244, 128, 32, 0.4),
+    rgba(244, 128, 32, 0.3)
+  );
+  border-color: #f48020;
+  box-shadow:
     0 8px 24px rgba(244, 128, 32, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .csir-calendar__day.is-selected {
-  background: linear-gradient(135deg, rgba(126, 217, 87, 0.35), rgba(126, 217, 87, 0.25));
+  background: linear-gradient(
+    135deg,
+    rgba(126, 217, 87, 0.35),
+    rgba(126, 217, 87, 0.25)
+  );
   border: 2px solid rgba(126, 217, 87, 0.9);
-  box-shadow: 
+  box-shadow:
     0 8px 24px rgba(126, 217, 87, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: scale(1.08);
@@ -253,16 +311,17 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #F48020, #d46a1a);
+  background: linear-gradient(135deg, #f48020, #d46a1a);
   bottom: 6px;
-  box-shadow: 
+  box-shadow:
     0 0 8px rgba(244, 128, 32, 0.8),
     0 2px 4px rgba(0, 0, 0, 0.3);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -277,20 +336,55 @@
   gap: 10px;
   padding: 20px 24px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(26, 38, 82, 0.8), rgba(15, 26, 58, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(26, 38, 82, 0.8),
+    rgba(15, 26, 58, 0.9)
+  );
   border: 1px solid rgba(244, 128, 32, 0.3);
-  box-shadow: 
+  box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .csir-calendar__details h4 {
   margin: 0;
-  color: #F48020;
+  color: #f48020;
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.01em;
   text-shadow: 0 2px 6px rgba(244, 128, 32, 0.4);
+}
+
+.csir-calendar__details-list {
+  display: grid;
+  gap: 12px;
+}
+
+.csir-calendar__details-item {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.csir-calendar__details-item strong {
+  color: #ffffff;
+  font-size: 0.98rem;
+}
+
+.csir-calendar__details-item p {
+  margin: 0;
+}
+
+.csir-calendar__details-item span {
+  color: rgba(244, 128, 32, 0.9);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .csir-calendar__upcoming {
@@ -313,7 +407,11 @@
   gap: 16px;
   padding: 14px 18px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(26, 38, 82, 0.7), rgba(15, 26, 58, 0.8));
+  background: linear-gradient(
+    135deg,
+    rgba(26, 38, 82, 0.7),
+    rgba(15, 26, 58, 0.8)
+  );
   border: 1px solid rgba(244, 128, 32, 0.2);
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
@@ -339,7 +437,11 @@
 .csir-calendar__upcoming li:hover {
   transform: translateX(4px);
   border-color: rgba(244, 128, 32, 0.5);
-  background: linear-gradient(135deg, rgba(26, 38, 82, 0.85), rgba(15, 26, 58, 0.95));
+  background: linear-gradient(
+    135deg,
+    rgba(26, 38, 82, 0.85),
+    rgba(15, 26, 58, 0.95)
+  );
   box-shadow: 0 6px 18px rgba(244, 128, 32, 0.3);
 }
 
@@ -347,6 +449,19 @@
   color: #ffffff;
   font-weight: 800;
   letter-spacing: -0.01em;
+}
+
+.csir-calendar__upcoming-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.csir-calendar__upcoming-location {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .csir-calendar__upcoming-date {
@@ -364,7 +479,7 @@
 }
 
 .csir-impact h3 {
-  color: #2B3D79;
+  color: #2b3d79;
   margin-bottom: 10px;
   font-size: 1.15rem;
 }
@@ -415,7 +530,7 @@
 .csir-content h2,
 .csir-initiatives h3,
 .csir-impact h3 {
-  color: #F48020;
+  color: #f48020;
 }
 
 .csir-content p,

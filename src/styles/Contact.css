@@ -1,8 +1,7 @@
-/* Contact Page */
+/* * Contact page */
 .contact {
   width: 100%;
 }
-
 
 .contact-container {
   display: grid;
@@ -28,7 +27,7 @@
 }
 
 .contact-map__header h2 {
-  color: #F48020;
+  color: #f48020;
   font-size: 1.6rem;
   margin-bottom: 10px;
   font-weight: 700;
@@ -56,21 +55,21 @@
 }
 
 .contact-info h2 {
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 1.8rem;
   margin-bottom: 30px;
   font-weight: 700;
 }
 
 .contact-heading {
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 1.8rem;
   margin-bottom: 30px;
   font-weight: 700;
 }
 
 .contact-heading__accent {
-  color: #F48020;
+  color: #f48020;
   font-weight: 700;
 }
 
@@ -79,21 +78,21 @@
 }
 
 .info-item h3 {
-  color: #F48020;
+  color: #f48020;
   font-size: 1.2rem;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .contact-subheading {
-  color: #2B3D79;
+  color: #2b3d79;
   font-size: 1.2rem;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .contact-subheading__accent {
-  color: #F48020;
+  color: #f48020;
   font-weight: 600;
   font-size: 0.9em;
   display: inline-block;
@@ -120,14 +119,14 @@
 }
 
 .office-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.45rem;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #F48020;
+  background: #f48020;
   box-shadow: 0 0 0 4px rgba(244, 128, 32, 0.2);
 }
 
@@ -140,7 +139,7 @@
 
 .office-details p {
   margin: 0;
-  color: #555;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -149,11 +148,11 @@
 }
 
 .office-dot--ho {
-  background: #F48020;
+  background: #f48020;
 }
 
 .office-dot--free-state {
-  background: #1B234E;
+  background: #1b234e;
 }
 
 .office-dot--northern-cape {
@@ -169,15 +168,15 @@
 }
 
 .office-dot--limpopo {
-  background: #8B5E34;
+  background: #8b5e34;
 }
 
 .office-dot--mpumalanga {
-  background: #1B5E20;
+  background: #1b5e20;
 }
 
 .office-dot--kwa-zulu-natal {
-  background: #7ED957;
+  background: #7ed957;
 }
 
 .contact-form {
@@ -213,21 +212,23 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #F48020;
+  border-color: #f48020;
   box-shadow: 0 0 0 3px rgba(244, 128, 32, 0.1);
 }
 
 .submit-btn {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #F48020 0%, #d46a1a 100%);
+  background: linear-gradient(135deg, #f48020 0%, #d46a1a 100%);
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .submit-btn:hover {

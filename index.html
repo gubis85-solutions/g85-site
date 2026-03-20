@@ -2,15 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/src/assets/g85%20logo%20transparent.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/assets/g85%20logo%20transparent.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       (function () {
         const params = new URLSearchParams(window.location.search);
-        const redirectPath = params.get('p');
+        const redirectPath = params.get("p");
         if (redirectPath) {
           const nextUrl = redirectPath + window.location.hash;
-          window.history.replaceState(null, '', nextUrl);
+          window.history.replaceState(null, "", nextUrl);
         }
       })();
     </script>

@@ -1,0 +1,181 @@
+/* Career application page */
+.application-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #2b3d79;
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 28px) clamp(64px, 7vw, 96px);
+}
+
+.application-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 38px);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.13),
+    rgba(255, 255, 255, 0.07)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 22px 38px rgba(15, 26, 58, 0.28);
+  display: grid;
+  gap: 18px;
+}
+
+.application-card h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.application-card h2 {
+  margin: 0;
+  color: #f48020;
+  font-size: clamp(1.15rem, 2.1vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.reference {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.95rem;
+}
+
+.reference strong {
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.copy-button {
+  justify-self: start;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.52);
+  transform: translateY(-1px);
+}
+
+.instructions {
+  margin-top: 6px;
+  display: grid;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instructions h3 {
+  margin: 6px 0 0;
+  color: #f48020;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.instructions p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.75;
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 22px;
+  color: rgba(255, 255, 255, 0.92);
+  display: grid;
+  gap: 8px;
+}
+
+.instructions li {
+  line-height: 1.6;
+}
+
+.email-address,
+.email-subject {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  margin-top: 2px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(244, 128, 32, 0.45);
+  background: rgba(244, 128, 32, 0.14);
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.apply-email-button {
+  justify-self: start;
+  margin-top: 6px;
+  text-decoration: none;
+  border: 1px solid rgba(244, 128, 32, 0.6);
+  background: rgba(244, 128, 32, 0.18);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.apply-email-button:hover {
+  background: #f48020;
+  border-color: #f48020;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .application-card {
+    gap: 16px;
+  }
+
+  .apply-email-button,
+  .copy-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .application-page {
+    padding-top: 24px;
+  }
+
+  .instructions {
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .instructions ul {
+    padding-left: 20px;
+  }
+}

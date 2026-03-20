@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import '../styles/Home.css';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "../styles/Home.css";
 import slide1 from "../assets/Slide_Show/pic1.jpg";
 import separationImage from "../assets/Seperation-section/img1.png";
 import execImage from "../assets/executive-message/Exec-image.jpg";
@@ -12,56 +12,58 @@ import monitoringResponseIcon from "../assets/Service-icons/Monitoring_&_Respons
 import specialisedSecurityIcon from "../assets/Service-icons/Specialised_Security_Services.png";
 
 export default function Home() {
-  // Core UI state for background slideshow and contact form.
+  // * Core UI state for background slideshow and contact form.
+   
   const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
   const [currentAboutImageIndex] = useState(0);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    businessName: '',
-    province: '',
-    serviceInterest: '',
-    productInterest: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    businessName: "",
+    province: "",
+    serviceInterest: "",
+    productInterest: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Hero background images (first is the primary/pivot image).
+  // * Hero background images (first is the primary/pivot image).
   const backgroundImages = [
-    '../assets/hero-bg.jpeg', // Pivot image - displayed longer
-    '../assets/gubis85.png',
+    "../assets/hero-bg.jpeg", // * Pivot image (displayed longer).
+    "../assets/gubis85.png",
   ];
 
-  // Slideshow images for the About preview section.
+  // * Slideshow images for the About preview section.
   const aboutImages = [slide1];
 
-  // Service categories for slideshow
+  // * Service categories for slideshow.
   const serviceCategories = [
-    { 
-      name: 'Physical Security Services',
+    {
+      name: "Physical Security Services",
       icon: physicalSecurityIcon,
-      link: '/services#physical-security'
+      link: "/services#physical-security",
     },
-    { 
-      name: 'Electronic & Digital Security',
+    {
+      name: "Electronic & Digital Security",
       icon: electronicSecurityIcon,
-      link: '/services#electronic-security'
+      link: "/services#electronic-security",
     },
-    { 
-      name: 'Monitoring & Response',
+    {
+      name: "Monitoring & Response",
       icon: monitoringResponseIcon,
-      link: '/services#monitoring-response'
+      link: "/services#monitoring-response",
     },
-    { 
-      name: 'Specialised Security Services',
+    {
+      name: "Specialised Security Services",
       icon: specialisedSecurityIcon,
-      link: '/services#specialised-security'
+      link: "/services#specialised-security",
     },
   ];
 
-  // Background grid animation for the hero.
+  // * Background grid animation for the hero.
   const gridVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -70,7 +72,7 @@ export default function Home() {
     },
   };
 
-  // Service slideshow auto-advance (resets on manual navigation).
+  // * Service slideshow auto-advance (resets on manual navigation).
   useEffect(() => {
     const serviceSlideTimeout = setTimeout(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % serviceCategories.length);
@@ -79,35 +81,44 @@ export default function Home() {
     return () => clearTimeout(serviceSlideTimeout);
   }, [currentServiceIndex, serviceCategories.length]);
 
-  // Navigate to previous service
+  // * Navigates to the previous service.
   const prevService = () => {
-    setCurrentServiceIndex((prev) => (prev - 1 + serviceCategories.length) % serviceCategories.length);
+    setCurrentServiceIndex(
+      (prev) =>
+        (prev - 1 + serviceCategories.length) % serviceCategories.length,
+    );
   };
 
-  // Navigate to next service
+  // * Navigates to the next service.
   const nextService = () => {
     setCurrentServiceIndex((prev) => (prev + 1) % serviceCategories.length);
   };
 
-  // Background image slideshow
+  // * Background image slideshow.
   useEffect(() => {
-    const bgSlideInterval = setInterval(() => {
-      setCurrentBgImageIndex((prev) => {
-        const nextIndex = (prev + 1) % backgroundImages.length;
-        // If moving away from pivot image (index 0), show supporting images for shorter duration
-        // If on pivot image, stay longer before switching
-        return nextIndex;
-      });
-    }, (currentBgImageIndex === 0 ? 8000 : 4000)); // Pivot: 8s, Others: 4s
+    const bgSlideInterval = setInterval(
+      () => {
+        setCurrentBgImageIndex((prev) => {
+          const nextIndex = (prev + 1) % backgroundImages.length;
+          // * If moving away from pivot image (index 0), show supporting images for shorter duration.
+          // * If on pivot image, stay longer before switching.
+          return nextIndex;
+        });
+      },
+      currentBgImageIndex === 0 ? 8000 : 4000,
+    ); // * Pivot: 8s, other slides: 4s.
 
     return () => clearInterval(bgSlideInterval);
   }, [backgroundImages.length, currentBgImageIndex]);
 
-  // About section slideshow
-  
+  // * About section slideshow.
 
-  // Keep form state in sync with inputs.
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  // * Keep form state in sync with inputs.
+  const handleFormChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -115,39 +126,86 @@ export default function Home() {
     }));
   };
 
-  // Simple form submission handler (placeholder for backend integration).
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your enquiry! We will contact you soon.');
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      businessName: '',
-      province: '',
-      serviceInterest: '',
-      productInterest: '',
-      message: '',
+  // ? Simple form submission handler (placeholder for backend integration).
+  const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://g85-cms-backend-production.up.railway.app";
+
+const handleFormSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (isSubmitting) return;
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch(`${API_URL}/api/contact-enquiries/submit`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        businessName: formData.businessName,
+        province: formData.province,
+        serviceInterest: formData.serviceInterest,
+        productInterest: formData.productInterest,
+        message: formData.message,
+      }),
     });
-  };
+
+    const contentType = response.headers.get("content-type") || "";
+    const result = contentType.includes("application/json")
+      ? await response.json()
+      : await response.text();
+
+    if (!response.ok) {
+      const errorMessage =
+        typeof result === "string"
+          ? result
+          : result?.error?.message || result?.message || `Request failed (${response.status})`;
+
+      throw new Error(errorMessage);
+    }
+
+    alert("Your enquiry was sent successfully.");
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      businessName: "",
+      province: "",
+      serviceInterest: "",
+      productInterest: "",
+      message: "",
+    });
+  } catch (error: any) {
+    console.error("Form submission error:", error);
+    alert(error.message || "Something went wrong while sending your enquiry.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="home">
-      {/* Animated Background Grid */}
-      <motion.div 
+      {/* * Animated background grid */}
+      <motion.div
         className="animated-grid"
         variants={gridVariants}
         initial="hidden"
         animate="visible"
       />
 
-      {/* Hero Section */}
-      
-            <section className="hero" aria-label="Gubis85 hero banner" />   
+      {/* * Hero section */}
 
-      {/* Company Description */}
+      <section className="hero" aria-label="Gubis85 hero banner" />
+
+      {/* * Company description */}
       <motion.section
         className="company-description"
         initial={{ opacity: 0, y: 40 }}
@@ -159,14 +217,14 @@ export default function Home() {
           <div className="about-slideshow">
             <AnimatePresence mode="sync" initial={false}>
               <motion.img
-               key={currentAboutImageIndex}
-               src={aboutImages[currentAboutImageIndex]}
+                key={currentAboutImageIndex}
+                src={aboutImages[currentAboutImageIndex]}
                 alt="Gubis85 operations and sites"
-               className="about-slide-image"
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: 'easeInOut' }}
+                className="about-slide-image"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
               />
             </AnimatePresence>
           </div>
@@ -175,76 +233,81 @@ export default function Home() {
               <span className="about-heading__accent">About</span>Gubis85
             </h2>
             <p>
-              Gubis85 Solutions (Pty) Ltd is a 100% black-owned, BBBEE-accredited security 
-              services provider established in 2013. With more than a decade of operational 
-              experience, the company has evolved into a trusted and capable security partner 
-              for national, provincial, and local government departments, state-owned entities, 
-              mining operations, and private-sector organisations across South Africa.
-              The company was founded with a clear mandate to address critical 
-              shortcomings within the security industry by delivering reliable, compliant, and 
-              professionally managed security solutions. Since inception, Gubis85 has focused 
-              on building strong operational systems, investing in skilled personnel, and 
-              adopting technology-driven approaches that enable consistent service delivery in 
-              complex and high-risk environments.
+              Gubis85 Solutions (Pty) Ltd is a 100% black-owned,
+              BBBEE-accredited security services provider established in 2013.
+              With more than a decade of operational experience, the company has
+              evolved into a trusted and capable security partner for national,
+              provincial, and local government departments, state-owned
+              entities, mining operations, and private-sector organisations
+              across South Africa. The company was founded with a clear mandate
+              to address critical shortcomings within the security industry by
+              delivering reliable, compliant, and professionally managed
+              security solutions. Since inception, Gubis85 has focused on
+              building strong operational systems, investing in skilled
+              personnel, and adopting technology-driven approaches that enable
+              consistent service delivery in complex and high-risk environments.
             </p>
           </div>
         </div>
       </motion.section>
 
-      {/* What Seperates Us Sextion*/}
+      {/* * What sets us apart section */}
       <div className="fun-facts-header">
-  <h2 className="fun-facts-heading">
-    <span className="fun-facts-heading__accent">What Sets</span> Us Apart
-  </h2>
-  <p className="fun-facts-subtitle">
-    Gubis85 Solutions distinguishes itself through a combination of proven delivery
-    capability, strong governance, and an integrated approach to security service
-    provision. Our ability to operate effectively across diverse and high-risk
-    environments is supported by experience, scale, and disciplined operational.
-  </p>
-  <img
-    className="fun-facts-image"
-    src={separationImage}
-    alt="Gubis85 security capabilities"
-  />
-</div>
-
-
-  <div className="message-from-exec">
-  <div className="message-from-exec__inner">
-    <h2 className="about-heading">
-      <span className="about-heading__accent">Message from the</span>
-      Executive Chairman
-    </h2>
-    <br /><br /><br />
-    <div className="message-from-exec__content">
-      <div className="message-from-exec__media">
-        <div className="message-from-exec__portrait">
-          <img src={execImage} alt="Executive Chairman" />
-        </div>
-        <p className="message-from-exec__caption">
-          <span style={{ fontWeight: '1000' }}>Mr Calvin Mahlangu</span><br />
-          <span>Founder & Executive Chairman</span>
+        <h2 className="fun-facts-heading">
+          <span className="fun-facts-heading__accent">What Sets</span> Us Apart
+        </h2>
+        <p className="fun-facts-subtitle">
+          Gubis85 Solutions distinguishes itself through a combination of proven
+          delivery capability, strong governance, and an integrated approach to
+          security service provision. Our ability to operate effectively across
+          diverse and high-risk environments is supported by experience, scale,
+          and disciplined operational.
         </p>
+        <img
+          className="fun-facts-image"
+          src={separationImage}
+          alt="Gubis85 security capabilities"
+        />
       </div>
-     
-      <p className="message-from-exec__text">
-        Gubis85 Solutions is built on intentional leadership, operational discipline,
-        and a commitment to sustainable growth. Within its first seven years of
-        effective operations, the company secured major public-sector contracts
-        supported by robust financial, digital, and operational systems.
-        As part of our strategic evolution, Gubis85 has adopted the “Built to Last
-        2028” strategy positioning the organisation for long-term performance,
-        leadership continuity, and enhanced stakeholder confidence. Our focus
-        remains on safeguarding client assets, delivering service excellence, and
-        empowering our workforce nationwide.
-      </p>
-    </div>
-  </div>
-</div>
 
+      <div className="message-from-exec">
+        <div className="message-from-exec__inner">
+          <h2 className="about-heading">
+            <span className="about-heading__accent">Message from the</span>
+            Executive Chairman
+          </h2>
+          <br />
+          <br />
+          <br />
+          <div className="message-from-exec__content">
+            <div className="message-from-exec__media">
+              <div className="message-from-exec__portrait">
+                <img src={execImage} alt="Executive Chairman" />
+              </div>
+              <p className="message-from-exec__caption">
+                <span style={{ fontWeight: "1000" }}>Mr Calvin Mahlangu</span>
+                <br />
+                <span>Founder & Executive Chairman</span>
+              </p>
+            </div>
 
-      {/* Services Categories Section */}
+            <p className="message-from-exec__text">
+              Gubis85 Solutions is built on intentional leadership, operational
+              discipline, and a commitment to sustainable growth. Within its
+              first seven years of effective operations, the company secured
+              major public-sector contracts supported by robust financial,
+              digital, and operational systems. As part of our strategic
+              evolution, Gubis85 has adopted the “Built to Last 2028” strategy
+              positioning the organisation for long-term performance, leadership
+              continuity, and enhanced stakeholder confidence. Our focus remains
+              on safeguarding client assets, delivering service excellence, and
+              empowering our workforce nationwide.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* * Services categories section */}
       <motion.section
         className="services-categories-section"
         initial={{ opacity: 0 }}
@@ -256,7 +319,7 @@ export default function Home() {
           <span className="about-heading__accent">Our</span> Services
         </h2>
         <div className="services-categories-slideshow">
-          {/* Previous button */}
+          {/* * Previous button */}
           <button
             className="slideshow-control slideshow-control--prev"
             onClick={prevService}
@@ -267,30 +330,34 @@ export default function Home() {
 
           <div className="slideshow-cards-container">
             {[
-              (currentServiceIndex - 1 + serviceCategories.length) % serviceCategories.length,
+              (currentServiceIndex - 1 + serviceCategories.length) %
+                serviceCategories.length,
               currentServiceIndex,
-              (currentServiceIndex + 1) % serviceCategories.length
+              (currentServiceIndex + 1) % serviceCategories.length,
             ].map((cardIndex, position) => (
               <motion.div
                 key={cardIndex}
-                className={`service-category-slide-wrapper ${position === 1 ? 'active' : 'side'}`}
+                className={`service-category-slide-wrapper ${position === 1 ? "active" : "side"}`}
                 initial={{ opacity: 0.5 }}
-                animate={{ opacity: position === 1 ? 1 : 0.5, scale: position === 1 ? 1 : 0.85 }}
+                animate={{
+                  opacity: position === 1 ? 1 : 0.5,
+                  scale: position === 1 ? 1 : 0.85,
+                }}
                 transition={{ duration: 0.6 }}
               >
-                <Link 
-                  to={serviceCategories[cardIndex].link} 
+                <Link
+                  to={serviceCategories[cardIndex].link}
                   className="service-category-slide"
                 >
                   <motion.div
                     className="service-category-image-frame"
                     whileHover={position === 1 ? { scale: 1.05, y: -8 } : {}}
                     whileTap={position === 1 ? { scale: 0.98 } : {}}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <img 
-                      src={serviceCategories[cardIndex].icon} 
-                      alt={serviceCategories[cardIndex].name} 
+                    <img
+                      src={serviceCategories[cardIndex].icon}
+                      alt={serviceCategories[cardIndex].name}
                     />
                   </motion.div>
                 </Link>
@@ -298,7 +365,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Next button */}
+          {/* * Next button */}
           <button
             className="slideshow-control slideshow-control--next"
             onClick={nextService}
@@ -307,13 +374,13 @@ export default function Home() {
             →
           </button>
         </div>
-        
-        {/* Slideshow indicators - moved below frame */}
+
+        {/* * Slideshow indicators (moved below frame) */}
         <div className="slideshow-indicators">
           {serviceCategories.map((_, idx) => (
             <button
               key={idx}
-              className={`indicator ${idx === currentServiceIndex ? 'active' : ''}`}
+              className={`indicator ${idx === currentServiceIndex ? "active" : ""}`}
               onClick={() => setCurrentServiceIndex(idx)}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -321,9 +388,8 @@ export default function Home() {
         </div>
       </motion.section>
 
-
-      {/* Features Section */}
-      <motion.section 
+      {/* * Features section */}
+      <motion.section
         className="features"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -336,20 +402,23 @@ export default function Home() {
         <div className="features-grid">
           {[
             {
-              title: '24/7 Monitoring',
-              description: 'Round-the-clock security monitoring and rapid response protocols',
+              title: "24/7 Monitoring",
+              description:
+                "Round-the-clock security monitoring and rapid response protocols",
             },
             {
-              title: 'Expert Team',
-              description: 'Highly trained and certified security professionals',
+              title: "Expert Team",
+              description:
+                "Highly trained and certified security professionals",
             },
             {
-              title: 'Advanced Technology',
-              description: 'Latest AI-driven security systems and equipment',
+              title: "Advanced Technology",
+              description: "Latest AI-driven security systems and equipment",
             },
             {
-              title: 'Proven Track Record',
-              description: 'Years of excellence in protection and security management',
+              title: "Proven Track Record",
+              description:
+                "Years of excellence in protection and security management",
             },
           ].map((feature, idx) => (
             <motion.div
@@ -368,7 +437,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Get In Touch Form */}
+      {/* * Get in touch form */}
       <motion.section
         id="contact-form"
         className="get-in-touch-section"
@@ -383,7 +452,7 @@ export default function Home() {
           </h2>
 
           <form className="contact-form" onSubmit={handleFormSubmit}>
-            {/* Name Fields */}
+            {/* * Name fields */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="firstName">First Name *</label>
@@ -411,7 +480,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Fields */}
+            {/* * Contact fields */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
@@ -439,7 +508,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Business Name */}
+            {/* * Business name */}
             <div className="form-group full-width">
               <label htmlFor="businessName">Business Name *</label>
               <input
@@ -453,7 +522,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Province & Service Interest */}
+            {/* * Province and service interest */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="province">Province *</label>
@@ -496,7 +565,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Product of Interest */}
+            {/* * Product of interest */}
             <div className="form-group full-width">
               <label htmlFor="productInterest">Product of Interest</label>
               <select
@@ -506,14 +575,18 @@ export default function Home() {
                 onChange={handleFormChange}
               >
                 <option value="">Select Product/Service</option>
-                <option value="physical-guarding">Physical Guarding Security</option>
+                <option value="physical-guarding">
+                  Physical Guarding Security
+                </option>
                 <option value="surveillance">Surveillance Management</option>
                 <option value="control-room">Control Room Services</option>
                 <option value="access-control">Access Control System</option>
                 <option value="armed-response">Reaction Armed Response</option>
                 <option value="event-security">Special Event Security</option>
                 <option value="vip-protection">VIP Protection</option>
-                <option value="risk-assessment">Security Risk Assessment</option>
+                <option value="risk-assessment">
+                  Security Risk Assessment
+                </option>
                 <option value="electric-fence">Electric Fence Solutions</option>
                 <option value="intercom">Intercom System</option>
                 <option value="drone">Drone Monitoring</option>
@@ -525,7 +598,7 @@ export default function Home() {
               </select>
             </div>
 
-            {/* Message */}
+            {/* * Message */}
             <div className="form-group full-width">
               <label htmlFor="message">Message</label>
               <textarea
@@ -538,14 +611,15 @@ export default function Home() {
               />
             </div>
 
-            {/* Submit Button */}
+            {/* * Submit button */}
             <motion.button
               type="submit"
               className="submit-btn"
+              disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Send Enquiry
+              {isSubmitting ? "Sending..." : "Send Enquiry"}
             </motion.button>
           </form>
         </div>

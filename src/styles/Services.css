@@ -1,8 +1,8 @@
-/* Services Page */
+/* * Services page */
 .services {
   width: 100%;
   padding-bottom: 90px;
-  background: #2B3D79;
+  background: #2b3d79;
 }
 
 .service-category-section {
@@ -13,7 +13,7 @@
 .category-heading {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 750;
-  color: #F48020;
+  color: #f48020;
   text-align: center;
   margin-bottom: 50px;
   letter-spacing: -0.5px;
@@ -22,21 +22,21 @@
 }
 
 .category-heading::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #F48020, transparent);
+  background: linear-gradient(90deg, transparent, #f48020, transparent);
   border-radius: 2px;
 }
 
 .services-hero {
   background:
     linear-gradient(rgba(15, 26, 58, 0.5), rgba(15, 26, 58, 0.5)),
-    url('../assets/G85 CTA.png') center/cover no-repeat;
+    url("../assets/G85 CTA.png") center/cover no-repeat;
   background-size: cover;
   color: #fff;
   border-radius: 18px;
@@ -50,13 +50,11 @@
   align-items: center;
 }
 
-
 .services-hero__content {
   position: relative;
   z-index: 1;
   max-width: 760px;
 }
-
 
 .services-hero__eyebrow {
   font-size: 0.95rem;
@@ -103,7 +101,6 @@
   font-weight: 600;
   backdrop-filter: blur(6px);
 }
-
 
 .services .intro {
   text-align: center;
@@ -162,20 +159,20 @@
 
 .service-card__front {
   background: linear-gradient(135deg, #ffffff 0%, #f1f4ff 100%);
-  color: #2B3D79;
+  color: #2b3d79;
   position: relative;
   padding-bottom: 88px;
 }
 
 .service-card__front h3 {
-  color: #2B3D79;
+  color: #2b3d79;
 }
 
 .service-card__ribbon {
   position: absolute;
   top: 18px;
   right: -42px;
-  background: linear-gradient(135deg, #F48020 0%, #d46a1a 100%);
+  background: linear-gradient(135deg, #f48020 0%, #d46a1a 100%);
   color: #fff;
   font-size: 0.75rem;
   letter-spacing: 1px;
@@ -187,7 +184,7 @@
 }
 
 .service-card__back {
-  background: linear-gradient(135deg, #2B3D79 0%, #1a2652 100%);
+  background: linear-gradient(135deg, #2b3d79 0%, #1a2652 100%);
   color: #ffffff;
   transform: rotateY(180deg);
 }
@@ -197,7 +194,7 @@
   height: 52px;
   border-radius: 14px;
   background: rgba(244, 128, 32, 0.15);
-  color: #F48020;
+  color: #f48020;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +232,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #F48020;
+  color: #f48020;
   font-weight: 700;
   position: absolute;
   bottom: 24px;

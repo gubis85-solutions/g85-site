@@ -1,83 +1,91 @@
-import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPhone, FaEnvelope, FaSearch } from 'react-icons/fa';
-import { useState } from 'react';
-import '../styles/Navigation.css';
-import logo from '../assets/gubis85.png';
+import { Link } from "react-router-dom";
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+  FaSearch,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { useState } from "react";
+import "../styles/Navigation.css";
+import logo from "../assets/gubis85.png";
+import { SOCIAL_LINKS } from "../lib/socialLinks";
 
 export default function Navigation() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [copied, setCopied] = useState<string | null>(null);
-
-  const socialHandles = {
-    facebook: '@Gubis85Security',
-    twitter: '@Gubis85',
-    linkedin: 'Gubis85-Security',
-    instagram: '@Gubis85Security'
-  };
-
-  const handleCopyHandle = (platform: string, handle: string) => {
-    navigator.clipboard.writeText(handle);
-    setCopied(platform);
-    setTimeout(() => setCopied(null), 2000);
-  };
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // TODO: Implement actual search functionality
-      console.log('Searching for:', searchQuery);
-      // Could redirect to a search results page or filter content
+      // ! TODO: Implement actual search functionality.
+      console.log("Searching for:", searchQuery);
+      // ? Could redirect to a search results page or filter content.
     }
   };
   return (
     <>
-      {/* Social Media Top Bar */}
+      {/* * Social media top bar */}
       <div className="social-top-bar">
         <div className="social-container">
           <div className="social-icons">
-            <div className="social-icon-wrapper" title={socialHandles.facebook}>
-              <button 
-                onClick={() => handleCopyHandle('facebook', socialHandles.facebook)}
-                className={`social-icon-btn ${copied === 'facebook' ? 'copied' : ''}`}
-                aria-label="Facebook - Click to copy handle"
+            <div
+              className="social-icon-wrapper"
+              title={SOCIAL_LINKS.facebook.handle}
+            >
+              <a
+                href={SOCIAL_LINKS.facebook.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                aria-label={SOCIAL_LINKS.facebook.label}
               >
                 <FaFacebook />
-                {copied === 'facebook' && <span className="copy-tooltip">Copied!</span>}
-              </button>
+              </a>
             </div>
-            <div className="social-icon-wrapper" title={socialHandles.twitter}>
-              <button 
-                onClick={() => handleCopyHandle('twitter', socialHandles.twitter)}
-                className={`social-icon-btn ${copied === 'twitter' ? 'copied' : ''}`}
-                aria-label="Twitter - Click to copy handle"
+            <div className="social-icon-wrapper" title={SOCIAL_LINKS.x.handle}>
+              <a
+                href={SOCIAL_LINKS.x.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                aria-label={SOCIAL_LINKS.x.label}
               >
-                <FaTwitter />
-                {copied === 'twitter' && <span className="copy-tooltip">Copied!</span>}
-              </button>
+                <FaXTwitter />
+              </a>
             </div>
-            <div className="social-icon-wrapper" title={socialHandles.linkedin}>
-              <button 
-                onClick={() => handleCopyHandle('linkedin', socialHandles.linkedin)}
-                className={`social-icon-btn ${copied === 'linkedin' ? 'copied' : ''}`}
-                aria-label="LinkedIn - Click to copy handle"
+            <div
+              className="social-icon-wrapper"
+              title={SOCIAL_LINKS.linkedin.handle}
+            >
+              <a
+                href={SOCIAL_LINKS.linkedin.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                aria-label={SOCIAL_LINKS.linkedin.label}
               >
                 <FaLinkedin />
-                {copied === 'linkedin' && <span className="copy-tooltip">Copied!</span>}
-              </button>
+              </a>
             </div>
-            <div className="social-icon-wrapper" title={socialHandles.instagram}>
-              <button 
-                onClick={() => handleCopyHandle('instagram', socialHandles.instagram)}
-                className={`social-icon-btn ${copied === 'instagram' ? 'copied' : ''}`}
-                aria-label="Instagram - Click to copy handle"
+            <div
+              className="social-icon-wrapper"
+              title={SOCIAL_LINKS.instagram.handle}
+            >
+              <a
+                href={SOCIAL_LINKS.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                aria-label={SOCIAL_LINKS.instagram.label}
               >
                 <FaInstagram />
-                {copied === 'instagram' && <span className="copy-tooltip">Copied!</span>}
-              </button>
+              </a>
             </div>
           </div>
 
-          {/* Contact Details */}
+          {/* * Contact details */}
           <div className="contact-details">
             <div className="contact-item">
               <FaPhone size={14} />
@@ -89,9 +97,9 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Search Bar */}
+          {/* * Search bar */}
           <form className="search-bar" onSubmit={handleSearch}>
-            <input 
+            <input
               type="text"
               placeholder="Search website..."
               value={searchQuery}
@@ -105,14 +113,20 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* * Main navigation bar */}
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo-wrapper">
             <Link to="/" className="nav-logo">
-              <img src={logo} alt="Gubis85 Security Services" className="nav-logo-img" />
+              <img
+                src={logo}
+                alt="Gubis85 Security Services"
+                className="nav-logo-img"
+              />
             </Link>
-            <p className="nav-logo-description">Powered by Gubis85 Solutions (Pty) Ltd</p>
+            <p className="nav-logo-description">
+              Powered by Gubis85 Solutions (Pty) Ltd
+            </p>
           </div>
           <ul className="nav-menu">
             <li className="nav-item">
@@ -153,6 +167,16 @@ export default function Navigation() {
             <li className="nav-item">
               <Link to="/csir" className="nav-link">
                 CSR
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/gallery" className="nav-link">
+                Gallery
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/faq" className="nav-link">
+                FAQ
               </Link>
             </li>
           </ul>

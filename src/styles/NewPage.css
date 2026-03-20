@@ -1,4 +1,4 @@
-/* New Page */
+/* * New page */
 .new-page {
   width: 100%;
 }
@@ -8,14 +8,14 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 40px;
   border-radius: 10px;
-  border-left: 5px solid #F48020;
+  border-left: 5px solid #f48020;
   box-shadow: 0 5px 15px rgba(43, 61, 121, 0.1);
   max-width: 800px;
   margin: 0 auto;
 }
 
 .new-page .content h2 {
-  color: #F48020;
+  color: #f48020;
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 700;

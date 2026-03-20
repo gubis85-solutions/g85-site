@@ -1,4 +1,4 @@
-/* Footer Styles */
+/* * Footer styles */
 .footer {
   background-color: rgba(26, 38, 82, 0.75);
   background-image: url("../assets/ci pattern blue.png");
@@ -22,7 +22,7 @@
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 15px;
-  color: #F48020;
+  color: #f48020;
   font-size: 1.1rem;
 }
 
@@ -51,10 +51,10 @@
 }
 
 .footer-section a:hover {
-  color: #F48020;
+  color: #f48020;
 }
 
-/* Social Icons Footer */
+/* * Social icons footer */
 .footer-section .social-icons {
   display: flex;
   gap: 20px;
@@ -86,21 +86,86 @@
 }
 
 .footer-section .social-icon-btn:hover {
-  color: #F48020;
+  color: #f48020;
   transform: translateY(-3px);
 }
 
 .footer-bottom {
   background: #0f1620;
-  text-align: center;
   padding: 20px;
-  border-top: 1px solid #2B3D79;
+  border-top: 1px solid #2b3d79;
   color: #999;
+}
+
+.footer-bottom__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-bottom__copy,
+.footer-bottom__signature {
+  margin: 0;
+}
+
+.footer-bottom__copy {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-bottom__signature {
+  color: #ffd8b8;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 128, 32, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 128, 32, 0.24) 0%,
+    rgba(244, 128, 32, 0.06) 100%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 16px rgba(244, 128, 32, 0.24);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  animation: footer-signature-glow 3.6s ease-in-out infinite;
+}
+
+@keyframes footer-signature-glow {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 16px rgba(244, 128, 32, 0.22);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 0 24px rgba(244, 128, 32, 0.35);
+  }
 }
 
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;
     padding: 20px;
+  }
+
+  .footer-bottom__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-bottom__signature {
+    animation: none;
   }
 }

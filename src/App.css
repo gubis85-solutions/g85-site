@@ -5,10 +5,10 @@
 }
 
 :root {
-  --theme-blue: #2B3D79;
+  --theme-blue: #2b3d79;
   --theme-blue-deep: #1a2652;
   --theme-blue-bright: #9db7ff;
-  --theme-orange: #F48020;
+  --theme-orange: #f48020;
   --theme-orange-deep: #d46a1a;
   --theme-orange-soft: rgba(244, 128, 32, 0.15);
 }
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   background: var(--theme-blue);
@@ -93,11 +93,11 @@ h2 {
   padding: 40px 20px;
 }
 
-/* Shared Hero Styles */
+/* * Shared hero styles */
 .page-hero {
   background:
     linear-gradient(rgba(15, 26, 58, 0.5), rgba(15, 26, 58, 0.5)),
-    url('./assets/G85 CTA.png') center/cover no-repeat;
+    url("./assets/G85 CTA.png") center/cover no-repeat;
   background-size: cover;
   color: #fff;
   border-radius: 18px;
@@ -163,7 +163,7 @@ h2 {
 }
 
 .radar-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -20% -10% -10% -10%;
   background:
@@ -188,10 +188,14 @@ h2 {
 }
 
 .radar-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 60%);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -202,7 +206,7 @@ h2 {
 }
 
 .radar-hero__content::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 600px;
   height: 600px;
@@ -210,38 +214,58 @@ h2 {
   top: -180px;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 64, 64, 0.95) 0 4px, rgba(255, 64, 64, 0.35) 10px, transparent 14px),
+    radial-gradient(
+      circle,
+      rgba(255, 64, 64, 0.95) 0 4px,
+      rgba(255, 64, 64, 0.35) 10px,
+      transparent 14px
+    ),
     radial-gradient(circle, rgba(255, 96, 96, 0.95) 0 3px, transparent 8px),
     radial-gradient(circle, rgba(255, 96, 96, 0.95) 0 3px, transparent 8px),
     radial-gradient(circle, rgba(255, 96, 96, 0.95) 0 3px, transparent 8px),
     radial-gradient(circle, rgba(255, 96, 96, 0.95) 0 3px, transparent 8px),
     radial-gradient(circle, rgba(255, 96, 96, 0.95) 0 3px, transparent 8px),
-    url('./assets/globe.svg');
+    url("./assets/globe.svg");
   background-repeat: no-repeat;
-  background-position: 62% 58%, 56% 52%, 50% 46%, 48% 60%, 64% 66%, 58% 70%, center;
-  background-size: 16px 16px, 12px 12px, 10px 10px, 12px 12px, 10px 10px, 10px 10px, 100% 100%;
+  background-position:
+    62% 58%,
+    56% 52%,
+    50% 46%,
+    48% 60%,
+    64% 66%,
+    58% 70%,
+    center;
+  background-size:
+    16px 16px,
+    12px 12px,
+    10px 10px,
+    12px 12px,
+    10px 10px,
+    10px 10px,
+    100% 100%;
   filter: drop-shadow(0 24px 40px rgba(4, 12, 36, 0.55));
   z-index: -1;
   opacity: 0.55;
-  animation: radar-dots 3.2s ease-in-out infinite, radar-dots-shift 7s steps(1, end) infinite;
+  animation:
+    radar-dots 3.2s ease-in-out infinite,
+    radar-dots-shift 7s steps(1, end) infinite;
 }
 
 .radar-hero__content::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 600px;
   height: 600px;
   right: -240px;
   top: -180px;
   border-radius: 50%;
-  background:
-    conic-gradient(
-      from 0deg,
-      rgba(46, 220, 160, 0) 0deg,
-      rgba(46, 220, 160, 0.35) 40deg,
-      rgba(46, 220, 160, 0.08) 70deg,
-      rgba(46, 220, 160, 0) 100deg
-    );
+  background: conic-gradient(
+    from 0deg,
+    rgba(46, 220, 160, 0) 0deg,
+    rgba(46, 220, 160, 0.35) 40deg,
+    rgba(46, 220, 160, 0.08) 70deg,
+    rgba(46, 220, 160, 0) 100deg
+  );
   animation: radar-sweep 6s linear infinite;
   mix-blend-mode: screen;
   opacity: 0.85;
@@ -260,35 +284,91 @@ h2 {
 @keyframes radar-dots {
   0%,
   100% {
-    background-size: 16px 16px, 12px 12px, 10px 10px, 12px 12px, 10px 10px, 10px 10px, 100% 100%;
+    background-size:
+      16px 16px,
+      12px 12px,
+      10px 10px,
+      12px 12px,
+      10px 10px,
+      10px 10px,
+      100% 100%;
   }
   45% {
-    background-size: 20px 20px, 14px 14px, 12px 12px, 14px 14px, 12px 12px, 12px 12px, 100% 100%;
+    background-size:
+      20px 20px,
+      14px 14px,
+      12px 12px,
+      14px 14px,
+      12px 12px,
+      12px 12px,
+      100% 100%;
   }
   70% {
-    background-size: 12px 12px, 9px 9px, 7px 7px, 9px 9px, 7px 7px, 7px 7px, 100% 100%;
+    background-size:
+      12px 12px,
+      9px 9px,
+      7px 7px,
+      9px 9px,
+      7px 7px,
+      7px 7px,
+      100% 100%;
   }
 }
 
 @keyframes radar-dots-shift {
   0% {
-    background-position: 62% 58%, 56% 52%, 50% 46%, 48% 60%, 64% 66%, 58% 70%, center;
+    background-position:
+      62% 58%,
+      56% 52%,
+      50% 46%,
+      48% 60%,
+      64% 66%,
+      58% 70%,
+      center;
   }
   25% {
-    background-position: 60% 54%, 52% 50%, 54% 44%, 50% 62%, 66% 62%, 56% 72%, center;
+    background-position:
+      60% 54%,
+      52% 50%,
+      54% 44%,
+      50% 62%,
+      66% 62%,
+      56% 72%,
+      center;
   }
   50% {
-    background-position: 64% 56%, 58% 48%, 46% 50%, 52% 64%, 62% 68%, 54% 66%, center;
+    background-position:
+      64% 56%,
+      58% 48%,
+      46% 50%,
+      52% 64%,
+      62% 68%,
+      54% 66%,
+      center;
   }
   75% {
-    background-position: 58% 60%, 54% 54%, 48% 46%, 46% 58%, 60% 64%, 56% 70%, center;
+    background-position:
+      58% 60%,
+      54% 54%,
+      48% 46%,
+      46% 58%,
+      60% 64%,
+      56% 70%,
+      center;
   }
   100% {
-    background-position: 62% 58%, 56% 52%, 50% 46%, 48% 60%, 64% 66%, 58% 70%, center;
+    background-position:
+      62% 58%,
+      56% 52%,
+      50% 46%,
+      48% 60%,
+      64% 66%,
+      58% 70%,
+      center;
   }
 }
 
-/* Responsive containers */
+/* * Responsive containers */
 @media (max-width: 1024px) {
   .main-content {
     padding: 30px 20px;
@@ -407,10 +487,9 @@ h2 {
   }
 }
 
-/* Navigation handled in Navigation.css */
+/* * Navigation handled in Navigation.css */
 
-/* Footer */
-
+/* * Footer */
 
 .footer-container {
   max-width: 1200px;
@@ -425,7 +504,7 @@ h2 {
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 15px;
-  color: #F48020;
+  color: #f48020;
 }
 
 .footer-section ul {
@@ -443,17 +522,17 @@ h2 {
 }
 
 .footer-section a:hover {
-  color: #F48020;
+  color: #f48020;
 }
 
 .footer-bottom {
   background: #0f1620;
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #2B3D79;
+  border-top: 1px solid #2b3d79;
 }
 
-/* Responsive Footer */
+/* * Responsive footer */
 @media (max-width: 768px) {
   .footer-container {
     padding: 30px 15px;

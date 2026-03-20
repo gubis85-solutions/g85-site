@@ -1,6 +1,6 @@
-/* Social Media Top Bar */
+/* * Social media top bar */
 .social-top-bar {
-  background: #2B3D79;
+  background: #2b3d79;
   padding: 12px 0;
   border-bottom: 1px solid #1a2652;
 }
@@ -43,12 +43,12 @@
 }
 
 .social-icon-btn:hover {
-  color: #F48020;
+  color: #f48020;
   transform: translateY(-3px);
 }
 
 .social-icon-btn.copied {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .copy-tooltip {
@@ -56,7 +56,7 @@
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
   padding: 4px 8px;
   border-radius: 4px;
@@ -65,7 +65,7 @@
   z-index: 100;
 }
 
-/* Contact Details */
+/* * Contact details */
 .contact-details {
   display: flex;
   gap: 25px;
@@ -86,14 +86,14 @@
 }
 
 .contact-item svg {
-  color: #F48020;
+  color: #f48020;
 }
 
 .contact-item:hover {
-  color: #F48020;
+  color: #f48020;
 }
 
-/* Search Bar */
+/* * Search bar */
 .search-bar {
   display: flex;
   align-items: center;
@@ -108,7 +108,7 @@
 .search-bar:hover,
 .search-bar:focus-within {
   background: rgba(255, 255, 255, 0.15);
-  border-color: #F48020;
+  border-color: #f48020;
 }
 
 .search-input {
@@ -128,7 +128,7 @@
 .search-btn {
   background: none;
   border: none;
-  color: #F48020;
+  color: #f48020;
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -142,9 +142,9 @@
   transform: scale(1.1);
 }
 
-/* Navigation Styles */
+/* * Navigation styles */
 .navbar {
-  background: linear-gradient(135deg, #2B3D79 0%, #1a2652 100%);
+  background: linear-gradient(135deg, #2b3d79 0%, #1a2652 100%);
   padding: 20px 0;
   position: sticky;
   top: 0;
@@ -172,7 +172,7 @@
 }
 
 .nav-logo {
-  color: #F48020;
+  color: #f48020;
   font-size: 1.8rem;
   font-weight: 900;
   text-decoration: none;
@@ -217,10 +217,12 @@
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 3rem;
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-item {
@@ -239,32 +241,32 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #F48020, #ff9d45);
+  background: linear-gradient(90deg, #f48020, #ff9d45);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #F48020;
+  color: #f48020;
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Responsive Mobile Navigation */
+/* * Responsive mobile navigation */
 @media (max-width: 1024px) {
   .nav-container {
     gap: 20px;
   }
 
   .nav-menu {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .nav-logo {

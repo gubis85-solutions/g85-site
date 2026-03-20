@@ -1,8 +1,8 @@
-/* About Page */
+/* * About page */
 .about {
   width: 100%;
   padding-bottom: 90px;
-  background: #2B3D79;
+  background: #2b3d79;
   color: #ffffff;
   overflow-x: clip;
 }
@@ -10,7 +10,7 @@
 .about-hero {
   background:
     linear-gradient(rgba(15, 26, 58, 0.5), rgba(15, 26, 58, 0.5)),
-    url('../assets/G85 CTA.png') center/cover no-repeat;
+    url("../assets/G85 CTA.png") center/cover no-repeat;
   background-size: cover;
   color: #fff;
   border-radius: 18px;
@@ -25,10 +25,14 @@
 }
 
 .about-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 60%);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
   pointer-events: none;
 }
 
@@ -120,7 +124,7 @@
 }
 
 .about-h2__accent {
-  color: #F48020;
+  color: #f48020;
   font-weight: 600;
   display: inline;
 }
@@ -129,13 +133,13 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1.6px;
-  color: #F48020;
+  color: #f48020;
   font-weight: 700;
   margin: 0 0 16px 0;
 }
 
 .about-card__eyebrow--accent {
-  color: #F48020;
+  color: #f48020;
 }
 
 .video-player-container {
@@ -146,7 +150,9 @@
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   aspect-ratio: 16 / 9;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .video-player {
@@ -169,7 +175,7 @@
 
 .about-market__frame {
   padding: 8px 8px 0 0;
-  background: #F48020;
+  background: #f48020;
   border-radius: 16px;
   display: inline-block;
   width: 100%;
@@ -247,7 +253,7 @@
 }
 
 .about-panel {
-  background: linear-gradient(135deg, #2B3D79 0%, #1a2652 100%);
+  background: linear-gradient(135deg, #2b3d79 0%, #1a2652 100%);
   color: #ffffff;
   border-radius: 18px;
   padding: 28px;
@@ -285,14 +291,14 @@
 }
 
 .about-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 8px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #F48020;
+  background: #f48020;
   box-shadow: 0 0 0 4px rgba(244, 128, 32, 0.15);
 }
 
@@ -354,7 +360,7 @@
 
 .partner-card h3 {
   font-size: 0.95rem;
-  color: #2B3D79;
+  color: #2b3d79;
   font-weight: 700;
   margin: 0;
 }
@@ -378,7 +384,7 @@
   position: relative;
   width: 100%;
   min-height: 420px;
-  background: #2B3D79;
+  background: #2b3d79;
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -398,9 +404,12 @@
 }
 
 .about-map__svg path {
-  fill: #F48020;
-  stroke: #1B234E;
-  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+  fill: #f48020;
+  stroke: #1b234e;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.2s ease;
   cursor: pointer;
   transform-origin: center;
 }
@@ -446,14 +455,19 @@
   border-radius: 50%;
   border: 1px solid #ffffff;
   background: var(--pin-color, #f44336);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 3;
 }
 
 .about-map__pin.is-active {
-  box-shadow: 0 0 0 2px rgba(244, 128, 32, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 0 2px rgba(244, 128, 32, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
 }
 
 .about-map__details {
@@ -470,27 +484,27 @@
 }
 
 .about-map__details .about-map__label {
-  color: #2B3D79;
+  color: #2b3d79;
 }
 
 .about-map__label {
   text-transform: uppercase;
   letter-spacing: 1.6px;
   font-size: 0.75rem;
-  color: #2B3D79;
+  color: #2b3d79;
   font-weight: 700;
   margin: 0;
 }
 
 .about-map__label--accent {
-  color: #F48020;
+  color: #f48020;
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
 }
 
 .about-map__label--blue {
-  color: #2B3D79;
+  color: #2b3d79;
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
@@ -499,7 +513,7 @@
 .about-map__details h3 {
   margin: 0;
   font-size: 1.1rem;
-  color: #2B3D79;
+  color: #2b3d79;
   font-weight: 700;
 }
 
@@ -511,7 +525,7 @@
   text-align: left;
   font-size: 1.1rem;
   font-weight: 800;
-  color: #F48020;
+  color: #f48020;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -522,16 +536,16 @@
 }
 
 .about-map__title--blue {
-  color: #1B234E;
+  color: #1b234e;
 }
 
 .about-map__title--brown {
-  color: #8B5E34;
+  color: #8b5e34;
 }
 
 .about-map__title--light-blue {
   color: #7bb6ff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .about-map__title--yellow {
@@ -547,11 +561,11 @@
 }
 
 .about-map__title--green {
-  color: #1B5E20;
+  color: #1b5e20;
 }
 
 .about-map__title--light-green {
-  color: #7ED957;
+  color: #7ed957;
 }
 
 .about-map__title:hover,
@@ -564,7 +578,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--marker-color, #F48020);
+  background: var(--marker-color, #f48020);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
   flex: 0 0 10px;
 }
@@ -576,7 +590,7 @@
 }
 
 .about-map__details .about-map__label {
-  color: #2B3D79;
+  color: #2b3d79;
 }
 
 .about-map__list {
@@ -586,7 +600,7 @@
 
 .about-map__item {
   padding: 12px 14px;
-  background: #2B3D79;
+  background: #2b3d79;
   border: 1px solid rgba(244, 128, 32, 0.2);
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -599,8 +613,10 @@
 
 .about-map__item.is-active {
   background: #3a5ec0;
-  border-color: #F48020;
-  box-shadow: 0 0 0 2px rgba(244, 128, 32, 0.2), inset 0 0 0 1px rgba(244, 128, 32, 0.3);
+  border-color: #f48020;
+  box-shadow:
+    0 0 0 2px rgba(244, 128, 32, 0.2),
+    inset 0 0 0 1px rgba(244, 128, 32, 0.3);
 }
 
 .about-map__item p {
@@ -618,7 +634,7 @@
   background: none;
   border: none;
   padding: 0;
-  color: #F48020;
+  color: #f48020;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
