@@ -456,11 +456,23 @@ export default function Home() {
           </h2>
 
           {submitSuccess ? (
-            <p className="form-feedback form-feedback--success">{submitSuccess}</p>
+            <p
+              className="form-feedback form-feedback--success"
+              role="status"
+              aria-live="polite"
+            >
+              {submitSuccess}
+            </p>
           ) : null}
 
           {submitError ? (
-            <p className="form-feedback form-feedback--error">{submitError}</p>
+            <p
+              className="form-feedback form-feedback--error"
+              role="alert"
+              aria-live="assertive"
+            >
+              {submitError}
+            </p>
           ) : null}
 
           <form className="contact-form" onSubmit={handleFormSubmit}>

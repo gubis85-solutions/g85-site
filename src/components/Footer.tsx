@@ -114,9 +114,15 @@ export default function Footer() {
           <p className="footer-bottom__copy">
             &copy; 2026 Gubis85 Security Service. All rights reserved.
           </p>
-          <p className="footer-bottom__signature">
+          <a
+            className="footer-bottom__signature"
+            href="http://www.princetech.co.za/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Princeton Technologies website"
+          >
             designed by PRINCETON TECHOLOGIES PTY(LTD)
-          </p>
+          </a>
         </div>
       </div>
     </footer>

@@ -835,23 +835,55 @@
 }
 
 .form-feedback {
-  margin: 0 0 1rem;
-  padding: 0.95rem 1.1rem;
-  border-radius: 12px;
-  font-weight: 600;
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  font-weight: 700;
   line-height: 1.5;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  animation: feedback-pop 380ms ease;
 }
 
 .form-feedback--success {
-  color: #135e37;
-  background: rgba(28, 130, 77, 0.12);
-  border: 1px solid rgba(28, 130, 77, 0.28);
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d8a4a 0%, #1fa860 100%);
+  border: 1px solid #36b874;
+  border-left: 6px solid #c8ffd7;
+  box-shadow: 0 14px 28px rgba(12, 96, 57, 0.32);
 }
 
 .form-feedback--error {
-  color: #8f2d12;
-  background: rgba(210, 84, 38, 0.12);
-  border: 1px solid rgba(210, 84, 38, 0.28);
+  color: #ffffff;
+  background: linear-gradient(135deg, #b73911 0%, #d2501f 100%);
+  border: 1px solid #df6f44;
+  border-left: 6px solid #ffd7ca;
+  box-shadow: 0 14px 28px rgba(122, 41, 17, 0.28);
+}
+
+.form-feedback--success::before {
+  content: "\2713";
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.form-feedback--error::before {
+  content: "!";
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+@keyframes feedback-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .form-row {

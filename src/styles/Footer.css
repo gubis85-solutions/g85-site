@@ -118,6 +118,8 @@
 .footer-bottom__signature {
   color: #ffd8b8;
   font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
   letter-spacing: 0.06em;
   font-size: 0.82rem;
   padding: 7px 14px;

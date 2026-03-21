@@ -5,11 +5,15 @@
 
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   max-width: 1000px;
   margin: 0 auto;
   align-items: start;
+}
+
+.contact-info {
+  text-align: center;
 }
 
 .contact-map {
@@ -68,6 +72,10 @@
   font-weight: 700;
 }
 
+.contact-info .contact-heading {
+  color: #ffffff;
+}
+
 .contact-heading__accent {
   color: #f48020;
   font-weight: 700;
@@ -115,19 +123,11 @@
 .office-item {
   display: block;
   position: relative;
-  padding-left: 18px;
+  padding-left: 0;
 }
 
 .office-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.45rem;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #f48020;
-  box-shadow: 0 0 0 4px rgba(244, 128, 32, 0.2);
+  display: none;
 }
 
 .office-details h4 {
