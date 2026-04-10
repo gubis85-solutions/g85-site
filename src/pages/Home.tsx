@@ -238,18 +238,31 @@ export default function Home() {
             </h2>
             <p>
               Gubis85 Solutions (Pty) Ltd is a 100% black-owned,
-              BBBEE-accredited security services provider established in 2013.
-              With more than a decade of operational experience, the company has
-              evolved into a trusted and capable security partner for national,
+              BBBEE-accredited security services provider established in 2013 by
+              its founder, Boitumelo Mahlangu. With more than a decade of
+              operational experience, the company has grown into a trusted and
+              capable security partner, delivering services to national,
               provincial, and local government departments, state-owned
               entities, mining operations, and private-sector organisations
-              across South Africa. The company was founded with a clear mandate
-              to address critical shortcomings within the security industry by
-              delivering reliable, compliant, and professionally managed
-              security solutions. Since inception, Gubis85 has focused on
-              building strong operational systems, investing in skilled
-              personnel, and adopting technology-driven approaches that enable
-              consistent service delivery in complex and high-risk environments.
+              across South Africa. Founded with a clear mandate to address
+              critical shortcomings within the security industry, Gubis85
+              Solutions has consistently focused on providing reliable,
+              compliant, and professionally managed security solutions. The
+              company has built a strong reputation through the development of
+              robust operational systems, continuous investment in skilled
+              personnel, and the adoption of technology-driven approaches that
+              support consistent service delivery in complex and high-risk
+              environments. In 2017, Calvin Mahlangu assumed leadership of the
+              company, driving its strategic growth and expansion. Under his
+              direction, Gubis85 Solutions has strengthened its market position,
+              enhanced service capabilities, and continued to uphold its
+              commitment to excellence, integrity, and client satisfaction.
+              Headquartered in Gauteng, Gubis85 operates through a
+              well-established national footprint supported by provincial
+              offices and strategic partnerships. This decentralised operating
+              model allows the company to deploy resources rapidly, maintain
+              strong on-site supervision, and respond effectively to client
+              requirements across all nine provinces.
             </p>
           </div>
         </div>

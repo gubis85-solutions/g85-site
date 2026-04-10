@@ -8,46 +8,6 @@ export default function Contact() {
       label: "Boitumelo Mahlangu Corporate Office (head office)",
       address: "254 Lochner Road, Raslouw, Centurion, 0109",
     },
-    {
-      id: "limpopo",
-      label: "Limpopo Office",
-      address: "No. 16 5th Avenue, Thabazimbi",
-    },
-    {
-      id: "free-state",
-      label: "Free State Office",
-      address: "63-67 Kellner Street, Westdene, Bloemfontein, 9301",
-    },
-    {
-      id: "north-west",
-      label: "North West Office",
-      address: "44 Scutte Avenue, Brits, 9250",
-    },
-    {
-      id: "northern-cape",
-      label: "Northern Cape Office",
-      address: "Office No. 28-30, Market Square, Kimberly, 8351",
-    },
-    {
-      id: "eastern-cape",
-      label: "Eastern Cape Office",
-      address: "8 Winkley Street, Berea, East London",
-    },
-    {
-      id: "western-cape",
-      label: "Western Cape Office",
-      address: "Unit 6, Pope House, 4 Chenoweth Street, Durbanville",
-    },
-    {
-      id: "mpumalanga",
-      label: "Mpumalanga Office",
-      address: "Nedbank centre, 6 OR Tambo Street, Office No2D, Middelburg, 1040",
-    },
-    {
-      id: "kwa-zulu-natal",
-      label: "Kwa-Zulu Natal Office",
-      address: "Liberty Life Building, 21 Aurora Drive, Umhlanga, 4301",
-    },
   ];
 
   return (

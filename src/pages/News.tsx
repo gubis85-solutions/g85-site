@@ -3,6 +3,11 @@ import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import "../styles/News.css";
 
+const mediaStatementPdf = new URL(
+  "../assets/media statement dated 09 April 2026[48].pdf",
+  import.meta.url,
+).href;
+
 type StrapiImage = {
   url: string;
 };
@@ -89,6 +94,23 @@ export default function News() {
           </div>
         </motion.div>
       </section>
+
+      {/* * Management Notice */}
+      <motion.section
+        className="news-notice"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+      >
+        <div className="news-notice__content">
+          <h2>Official Media Statement: Response to Allegations in the Justice Madlanga Commission of Inquiry</h2>
+          <p className="news-notice__date">Date: 9 April 2026</p>
+          <p>For the full statement, please download the PDF below.</p>
+          <a href={mediaStatementPdf} download className="news-notice__download">
+            Download PDF
+          </a>
+        </div>
+      </motion.section>
 
       {/* * News feed */}
       <section className="news-filter">

@@ -138,50 +138,22 @@ export default function About() {
 
   // * Partner brands shown in the collage.
   const partners = [
-    { name: "PSIRA", logo: psiraLogo, url: "https://www.psira.co.za/" },
-    {
-      name: "OUTsurance",
-      logo: outsuranceLogo,
-      url: "https://www.outsurance.co.za/",
-    },
-    {
-      name: "Instacom",
-      logo: instacomLogo,
-      url: "https://www.instacom.co.za/",
-    },
-    {
-      name: "Halo Technologies",
-      logo: haloTechLogo,
-      url: "https://www.halotechnology.co.za/",
-    },
-    { name: "FNB", logo: fnbLogo, url: "https://www.fnb.co.za" },
-    {
-      name: "Bosch Uniform Supplies",
-      logo: boschUniformLogo,
-      url: "https://boschuniforms.co.za/",
-    },
-    {
-      name: "Affinity Health",
-      logo: affinityHealthLogo,
-      url: "https://www.affinityhealth.co.za/",
-    },
-    { name: "ABSA", logo: absaLogo, url: "https://www.absa.co.za/personal/" },
-    {
-      name: "Talisman",
-      logo: talismanLogo,
-      url: "https://www.talisman.co.za/",
-    },
-    { name: "Satlec", logo: satlecLogo, url: "#" },
-    { name: "SAPS", logo: sapsLogo, url: "https://www.saps.gov.za/" },
-    { name: "PSSPF", logo: psspfLogo, url: "https://www.psspfund.co.za/" },
-    { name: "Toyota", logo: toyotaLogo, url: "https://www.toyota.co.za" },
-    { name: "iTech", logo: itechLogo, url: "https://itecgroup.co.za/" },
-    { name: "ES Printing & Projects", logo: esPrintingLogo, url: "#" },
-    {
-      name: "Bidvest Steiner",
-      logo: bidvestLogo,
-      url: "https://steiner.co.za/",
-    },
+    { name: "PSIRA", logo: psiraLogo },
+    { name: "OUTsurance", logo: outsuranceLogo },
+    { name: "Instacom", logo: instacomLogo },
+    { name: "Halo Technologies", logo: haloTechLogo },
+    { name: "FNB", logo: fnbLogo },
+    { name: "Bosch Uniform Supplies", logo: boschUniformLogo },
+    { name: "Affinity Health", logo: affinityHealthLogo },
+    { name: "ABSA", logo: absaLogo },
+    { name: "Talisman", logo: talismanLogo },
+    { name: "Satlec", logo: satlecLogo },
+    { name: "SAPS", logo: sapsLogo },
+    { name: "PSSPF", logo: psspfLogo },
+    { name: "Toyota", logo: toyotaLogo },
+    { name: "iTech", logo: itechLogo },
+    { name: "ES Printing & Projects", logo: esPrintingLogo },
+    { name: "Bidvest Steiner", logo: bidvestLogo },
   ];
 
   // * Sister companies shown in the network strip.
@@ -296,8 +268,7 @@ export default function About() {
           <p className="about-hero__eyebrow">About Us</p>
           <h1>Specialised superior security and protection solutions.</h1>
           <p className="about-hero__subtext">
-            Gubis85 Solutions (Pty) Ltd delivers trusted physical and digital
-            security in a dynamic safety climate across South Africa and beyond.
+            Gubis85 Solutions (Pty) Ltd delivers trusted physical and digital security in a dynamic safety climate across South Africa and beyond.
           </p>
           <div className="about-hero__chips">
             <span>BBBEE Accredited</span>
@@ -454,22 +425,6 @@ export default function About() {
                   <h3>{partner.name}</h3>
                 </article>
               );
-
-              if (partner.url) {
-                return (
-                  <a
-                    key={partner.name}
-                    href={partner.url}
-                    className="partner-link"
-                    target={partner.url === "#" ? undefined : "_blank"}
-                    rel={
-                      partner.url === "#" ? undefined : "noopener noreferrer"
-                    }
-                  >
-                    {Card}
-                  </a>
-                );
-              }
 
               return (
                 <div key={partner.name} className="partner-link">
